@@ -15,7 +15,7 @@ const Home = () => {
   return (
     <div className="home-page">
       <h1>Welcome to Taiga</h1>
-      <p>Hello World! This is the React migration scaffold.</p>
+      <p>Hello World! This is the React migration scaffold. Verification test complete.</p>
       <div className="api-status">
         <h3>API Health Check:</h3>
         <p>Status: <span className={`status-${apiStatus}`}>{apiStatus}</span></p>
