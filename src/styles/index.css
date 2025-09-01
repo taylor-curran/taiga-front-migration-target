@@ -24,45 +24,78 @@ body {
   min-height: 100vh;
 }
 
-.app-header {
-  background: #2c3e50;
-  color: white;
-  padding: 1rem;
+/* Header Styles - Match original Taiga */
+.header {
+  background: white;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 0.75rem 1rem;
+  position: relative;
 }
 
 .header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
 .header-left {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 3rem;
 }
 
 .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: white;
-  text-decoration: none;
-}
-
-.main-nav {
   display: flex;
-  gap: 1rem;
+  align-items: center;
 }
 
-.main-nav a {
-  color: white;
+.logo h1 {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #20a8d8;
+  margin: 0;
   text-decoration: none;
 }
 
-.main-nav a:hover {
-  text-decoration: underline;
+.logo:hover h1 {
+  color: #1a8cba;
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: #70728F;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 400;
+  transition: color 0.2s;
+  position: relative;
+}
+
+.nav-links a:hover {
+  color: #20a8d8;
+}
+
+.nav-links a:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -0.75rem;
+  left: 50%;
+  background-color: #20a8d8;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-links a:hover:after {
+  width: 100%;
 }
 
 .main-container {
@@ -70,10 +103,39 @@ body {
   flex: 1;
 }
 
+/* Header Right Section */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.user-name {
+  color: #70728F;
+  font-size: 0.9rem;
+}
+
+/* Language Selector */
+.language-selector select {
+  padding: 0.4rem 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: white;
+  color: #70728F;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.language-selector select:hover {
+  border-color: #20a8d8;
+}
+
+/* Sidebar */
 .app-sidebar {
   width: 200px;
   background: #f4f4f4;
   padding: 1rem;
+  display: none; /* Hide sidebar for now */
 }
 
 .app-sidebar nav {

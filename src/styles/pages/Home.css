@@ -9,23 +9,70 @@
 }
 
 .discover-header {
-  max-width: 1200px;
-  margin: 0 auto 3rem auto;
   text-align: center;
-  padding: 0 1rem;
+  margin-bottom: 3rem;
+  background: linear-gradient(to bottom, #f8f9fa, #ffffff);
+  padding: 3rem 1rem;
+}
+
+.discover-header-inner {
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .discover-title {
-  font-size: 2rem;
-  font-weight: 600;
-  color: #2E3440;
-  margin: 0 0 1rem 0;
+  font-size: 2.5rem;
+  color: #20a8d8;
+  margin-bottom: 0.5rem;
+  font-weight: 300;
 }
 
 .discover-subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+/* Search Box Styles */
+.discover-search-form {
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.searchbox {
+  display: flex;
+  position: relative;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.search-input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: none;
   font-size: 1rem;
-  color: #434456;
-  margin: 0;
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: #999;
+}
+
+.search-button {
+  padding: 0.75rem 1.25rem;
+  background: #20a8d8;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background 0.2s;
+}
+
+.search-button:hover {
+  background: #1a8cba;
 }
 
 .api-status {

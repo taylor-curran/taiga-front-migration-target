@@ -50,12 +50,24 @@ const Home = () => {
       <section className="discover">
         <header>
           <div className="discover-header">
-            <h1 className="discover-title">Discover projects</h1>
-            <p className="discover-subtitle">
-              {stats.projects.total === 1 
-                ? "One public project to discover" 
-                : `${stats.projects.total} public projects to discover`}
-            </p>
+            <div className="discover-header-inner">
+              <h1 className="discover-title">Discover projects</h1>
+              <p className="discover-subtitle">
+                {stats.projects.total.toLocaleString()} public projects to discover
+              </p>
+              <form className="discover-search-form" onSubmit={(e) => e.preventDefault()}>
+                <div className="searchbox">
+                  <input 
+                    type="text" 
+                    placeholder="Type something..."
+                    className="search-input"
+                  />
+                  <button type="submit" className="search-button">
+                    🔍
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
         </header>
 
