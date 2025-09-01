@@ -1,14 +1,14 @@
 /* Featured Projects Component Styles - Based on AngularJS featured-projects.scss */
 .featured-projects {
   max-width: 1200px;
-  margin: 0 auto 4rem auto;
+  margin: 0 auto 3rem auto;
   padding: 0 1rem;
 }
 
 .featured-projects .title {
-  font-weight: 500;
-  font-size: 1.25rem;
-  color: #434456;
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #2E3440;
   text-align: center;
   margin-bottom: 2rem;
 }

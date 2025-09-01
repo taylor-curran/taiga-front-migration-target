@@ -1,12 +1,14 @@
 /* Project Card Component Styles - Based on AngularJS project-card.scss */
 .project-card {
   background: #FFFFFF;
-  border: 1px solid #D8DEE9;
+  border: 1px solid #E2E3E9;
   margin: 0.5rem;
   display: flex;
   flex-direction: column;
   border-radius: 3px;
   overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s ease;
 }
 
 .project-card .tags-container {
@@ -19,7 +21,7 @@
 }
 
 .project-card .project-card-inner {
-  padding: 1rem;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -47,14 +49,15 @@
 }
 
 .project-card .project-card-name {
-  font-size: 1.125rem;
-  font-weight: 500;
+  font-size: 1rem;
+  font-weight: 600;
   column-gap: 0.25rem;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   row-gap: 0.25rem;
   margin: 0;
+  line-height: 1.2;
 }
 
 .project-card .project-card-name a {
@@ -69,9 +72,9 @@
 .project-card .project-card-description {
   font-size: 0.875rem;
   font-weight: 400;
-  color: #4C566A;
-  margin: 0.5rem 0;
-  line-height: 1.4;
+  color: #5A5B72;
+  margin: 0.75rem 0;
+  line-height: 1.5;
 }
 
 .project-card .project-card-statistics {
