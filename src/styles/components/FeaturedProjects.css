@@ -16,7 +16,6 @@
 .featured-projects-inner {
   align-items: stretch;
   display: flex;
-  flex-grow: 0;
   flex-wrap: wrap;
   justify-content: flex-start;
   margin: 0 -0.75rem;
@@ -26,8 +25,9 @@
 .featured-project {
   display: flex;
   flex-basis: calc(25% - 1.5rem);
-  flex-wrap: wrap;
+  flex-shrink: 0;
   margin: 0.75rem;
+  min-width: 0;
 }
 
 /* Responsive breakpoints */
