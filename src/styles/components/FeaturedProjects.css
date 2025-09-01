@@ -33,12 +33,18 @@
 /* Responsive breakpoints */
 @media (max-width: 1024px) {
   .featured-project {
-    flex-basis: calc(50% - 1rem);
+    flex-basis: calc(50% - 1.5rem);
   }
 }
 
 @media (max-width: 768px) {
   .featured-project {
-    flex-basis: calc(100% - 1rem);
+    flex-basis: calc(100% - 1.5rem);
   }
+}
+
+/* Ensure project cards fill the featured-project container */
+.featured-project .project-card {
+  width: 100%;
+  height: 100%;
 }

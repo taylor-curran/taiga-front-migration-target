@@ -77,7 +77,8 @@
   font-weight: 400;
   color: #5A5B72;
   margin: 0.75rem 0;
-  line-height: 1.5;
+  line-height: 1.4;
+  flex: 1;
 }
 
 .project-card .project-card-statistics {
