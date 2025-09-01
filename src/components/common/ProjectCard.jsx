@@ -8,7 +8,7 @@ const ProjectCard = ({ project, showDescription = true, maxDescriptionLength = 1
   };
 
   return (
-    <div className="project-card featured-project">
+    <div className="project-card">
       <div className="tags-container">
         {project.colorized_tags?.map((tag) => (
           <div
