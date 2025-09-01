@@ -1,10 +1,9 @@
 /* Highlighted Projects Component Styles - Based on AngularJS highlighted.scss */
 .highlighted {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 3rem auto 4rem;
   display: flex;
-  justify-content: space-around;
-  margin-bottom: 4rem;
+  gap: 3rem;
   padding: 0 1rem;
 }
 
@@ -23,17 +22,12 @@
   display: flex;
   flex: 1;
   flex-direction: column;
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
 }
 
-.highlighted .highlighted-section:first-child {
-  margin-right: 8%;
-}
-
-@media (max-width: 1024px) {
-  .highlighted .highlighted-section:first-child {
-    margin-right: 0;
-  }
-}
 
 .highlighted .header {
   align-items: center;
@@ -69,10 +63,18 @@
 
 .highlighted .highlighted-project {
   align-items: flex-start;
-  border-bottom: 1px solid #E2E3E9;
+  border-bottom: 1px solid #F0F0F5;
   display: flex;
   min-height: 6rem;
-  padding: 1rem 0;
+  padding: 1.25rem 0;
+  transition: background-color 0.2s ease;
+}
+
+.highlighted .highlighted-project:hover {
+  background-color: #FAFBFC;
+  margin: 0 -1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .highlighted .highlighted-project:nth-last-child(-n+2) {

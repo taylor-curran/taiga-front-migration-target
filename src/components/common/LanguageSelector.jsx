@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { fetchLocales } from '../../services/api';
+import api from '../../services/api';
 
 const LanguageSelector = () => {
   const [locales, setLocales] = useState([]);
@@ -18,7 +19,10 @@ const LanguageSelector = () => {
   const handleLanguageChange = (lang) => {
     localStorage.setItem('lang', lang);
     setCurrentLang(lang);
-    window.location.reload();
+    // Update axios default headers without reloading
+    api.defaults.headers['Accept-Language'] = lang;
+    // Optionally trigger a custom event for components to refresh data
+    window.dispatchEvent(new CustomEvent('languageChanged', { detail: { lang } }));
   };
 
   return (

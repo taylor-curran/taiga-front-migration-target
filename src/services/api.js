@@ -47,40 +47,41 @@ export const fetchFeaturedProjects = async () => {
     const response = await api.get('/projects', {
       params: {
         discover_mode: true,
-        is_featured: true
+        is_featured: true,
+        page_size: 4
       }
     });
-    return response.data.slice(0, 4);
+    return response.data;
   } catch (error) {
     console.error('Failed to fetch featured projects:', error);
     return [];
   }
 };
 
-export const fetchMostLikedProjects = async (params = {}) => {
+export const fetchMostLikedProjects = async () => {
   try {
     const response = await api.get('/projects', {
       params: {
-        discover_mode: true,
-        ...params
+        page_size: 4,
+        order_by: '-total_fans'
       }
     });
-    return response.data.slice(0, 4);
+    return response.data;
   } catch (error) {
     console.error('Failed to fetch most liked projects:', error);
     return [];
   }
 };
 
-export const fetchMostActiveProjects = async (params = {}) => {
+export const fetchMostActiveProjects = async () => {
   try {
     const response = await api.get('/projects', {
       params: {
-        discover_mode: true,
-        ...params
+        page_size: 4,
+        order_by: '-total_activity'
       }
     });
-    return response.data.slice(0, 4);
+    return response.data;
   } catch (error) {
     console.error('Failed to fetch most active projects:', error);
     return [];
@@ -89,11 +90,27 @@ export const fetchMostActiveProjects = async (params = {}) => {
 
 export const fetchDiscoverStats = async () => {
   try {
-    const response = await api.get('/stats/discover');
-    return response.data;
+    // Fetch total count of public projects
+    const response = await api.get('/projects', {
+      params: {
+        page_size: 1
+      },
+      headers: {
+        'x-disable-pagination': 'True'
+      }
+    });
+    // The x-pagination-count header contains the total count
+    const totalCount = response.headers['x-pagination-count'] || 0;
+    return { projects: { total: parseInt(totalCount) || 0 } };
   } catch (error) {
     console.error('Failed to fetch discover stats:', error);
-    return { projects: { total: 0 } };
+    // Fallback: try to get a rough count
+    try {
+      const fallback = await api.get('/projects');
+      return { projects: { total: fallback.data.length || 0 } };
+    } catch {
+      return { projects: { total: 0 } };
+    }
   }
 };
 

@@ -15,9 +15,9 @@ function App() {
           <Route index element={<Home />} />
           <Route path="discover" element={<Home />} />
           <Route path="projects" element={<Projects />} />
-          <Route path="project/:id" element={<ProjectDetail />} />
-          <Route path="project/:id/backlog" element={<Backlog />} />
-          <Route path="project/:id/kanban" element={<KanbanBoard />} />
+          <Route path="project/:slug" element={<ProjectDetail />} />
+          <Route path="project/:slug/backlog" element={<Backlog />} />
+          <Route path="project/:slug/kanban" element={<KanbanBoard />} />
         </Route>
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
