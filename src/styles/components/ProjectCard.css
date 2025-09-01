@@ -7,9 +7,10 @@
   flex-direction: column;
   border-radius: 3px;
   overflow: hidden;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
   transition: box-shadow 0.2s ease;
-  min-height: 280px;
+  min-height: 320px;
+  width: 100%;
 }
 
 .project-card .tags-container {
@@ -22,7 +23,7 @@
 }
 
 .project-card .project-card-inner {
-  padding: 1.5rem;
+  padding: 1.25rem;
   display: flex;
   flex-direction: column;
   flex: 1;

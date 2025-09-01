@@ -20,23 +20,25 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   margin: 0 -0.5rem;
+  gap: 0;
 }
 
 .featured-project {
   display: flex;
-  flex-basis: 23%;
+  flex-basis: calc(25% - 1rem);
   flex-wrap: wrap;
+  margin: 0.5rem;
 }
 
 /* Responsive breakpoints */
 @media (max-width: 1024px) {
   .featured-project {
-    flex-basis: 45%;
+    flex-basis: calc(50% - 1rem);
   }
 }
 
 @media (max-width: 768px) {
   .featured-project {
-    flex-basis: 100%;
+    flex-basis: calc(100% - 1rem);
   }
 }
