@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { fetchFeaturedProjects } from '../services/api';
 import ProjectCard from './common/ProjectCard';
+import '../styles/components/FeaturedProjects.css';
 
 const FeaturedProjects = () => {
   const [projects, setProjects] = useState([]);

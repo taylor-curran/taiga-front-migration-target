@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { healthCheck, fetchMostLikedProjects, fetchMostActiveProjects, fetchDiscoverStats } from '../services/api';
 import FeaturedProjects from '../components/FeaturedProjects';
 import HighlightedProjects from '../components/HighlightedProjects';
+import '../styles/pages/Home.css';
 
 const Home = () => {
   const [apiStatus, setApiStatus] = useState('checking');
@@ -60,7 +61,7 @@ const Home = () => {
 
         <FeaturedProjects />
 
-        <section className="highlighted">
+        <div className="highlighted">
           <HighlightedProjects
             title="Most liked"
             icon="❤️"
@@ -78,7 +79,7 @@ const Home = () => {
             emptyMessage="There are no ACTIVE projects yet"
             orderBy="total_activity"
           />
-        </section>
+        </div>
 
         <div className="api-status">
           <h3>API Health Check:</h3>

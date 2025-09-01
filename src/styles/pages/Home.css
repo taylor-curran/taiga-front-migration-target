@@ -1,0 +1,66 @@
+/* Home Page Styles - Based on AngularJS discover styles */
+.home-page {
+  min-height: 100vh;
+  background: #F9F9FB;
+}
+
+.discover {
+  padding: 2rem 0;
+}
+
+.discover-header {
+  max-width: 1200px;
+  margin: 0 auto 3rem auto;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.discover-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #2E3440;
+  margin: 0 0 1rem 0;
+}
+
+.discover-subtitle {
+  font-size: 1rem;
+  color: #434456;
+  margin: 0;
+}
+
+.api-status {
+  max-width: 1200px;
+  margin: 4rem auto 0 auto;
+  padding: 2rem;
+  background: white;
+  border: 1px solid #D8DEE9;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.api-status h3 {
+  margin: 0 0 1rem 0;
+  color: #434456;
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+.api-status p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.status-healthy {
+  color: #93C45D;
+  font-weight: 600;
+}
+
+.status-error {
+  color: #E44057;
+  font-weight: 600;
+}
+
+.status-checking {
+  color: #70728F;
+  font-weight: 600;
+}

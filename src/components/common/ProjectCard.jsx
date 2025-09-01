@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import '../../styles/components/ProjectCard.css';
 
 const ProjectCard = ({ project, showDescription = true, maxDescriptionLength = 100 }) => {
   const truncateDescription = (text, maxLength) => {
@@ -7,7 +8,7 @@ const ProjectCard = ({ project, showDescription = true, maxDescriptionLength = 1
   };
 
   return (
-    <div className="project-card">
+    <div className="project-card featured-project">
       <div className="tags-container">
         {project.colorized_tags?.map((tag) => (
           <div

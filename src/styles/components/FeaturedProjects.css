@@ -1,0 +1,43 @@
+/* Featured Projects Component Styles - Based on AngularJS featured-projects.scss */
+.featured-projects {
+  max-width: 1200px;
+  margin: 0 auto 4rem auto;
+  padding: 0 1rem;
+}
+
+.featured-projects .title {
+  font-weight: 500;
+  font-size: 1.25rem;
+  color: #434456;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.featured-projects-inner {
+  align-items: stretch;
+  display: flex;
+  flex-grow: 0;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin: 0 -0.5rem;
+}
+
+.featured-project {
+  display: flex;
+  flex-basis: 23%;
+  flex-wrap: wrap;
+  min-height: 300px;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 1024px) {
+  .featured-project {
+    flex-basis: 45%;
+  }
+}
+
+@media (max-width: 768px) {
+  .featured-project {
+    flex-basis: 100%;
+  }
+}
