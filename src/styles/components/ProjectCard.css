@@ -2,7 +2,7 @@
 .project-card {
   background: #FFFFFF;
   border: 1px solid #D8DEE9;
-  margin: 0.5rem;
+  margin: 0;
   display: flex;
   flex-direction: column;
   border-radius: 3px;
@@ -23,7 +23,7 @@
 }
 
 .project-card .project-card-inner {
-  padding: 1.25rem;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
   flex: 1;
