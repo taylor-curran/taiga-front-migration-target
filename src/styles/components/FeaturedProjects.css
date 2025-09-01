@@ -26,7 +26,6 @@
   display: flex;
   flex-basis: 23%;
   flex-wrap: wrap;
-  min-height: 300px;
 }
 
 /* Responsive breakpoints */
