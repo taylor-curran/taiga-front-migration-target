@@ -124,4 +124,27 @@ export const fetchLocales = async () => {
   }
 };
 
+export const fetchPublicProjects = async (params = {}) => {
+  const queryParams = {
+    page_size: 20,
+    ...params
+  };
+  const response = await api.get('/projects', { params: queryParams });
+  return {
+    projects: response.data,
+    totalCount: parseInt(response.headers['x-pagination-count'] || '0'),
+    nextPage: response.headers['x-pagination-next'],
+    prevPage: response.headers['x-pagination-prev']
+  };
+};
+
+export const searchProjects = async (query, filters = {}) => {
+  const params = {
+    q: query,
+    ...filters,
+    page_size: 20
+  };
+  return fetchPublicProjects(params);
+};
+
 export default api;
