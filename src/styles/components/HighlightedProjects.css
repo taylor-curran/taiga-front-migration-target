@@ -1,0 +1,190 @@
+/* Highlighted Projects Component Styles - Based on AngularJS highlighted.scss */
+.highlighted {
+  max-width: 1200px;
+  margin: 3rem auto 4rem;
+  display: flex;
+  gap: 3rem;
+  padding: 0 1rem;
+}
+
+@media (max-width: 1024px) {
+  .highlighted {
+    flex-direction: column;
+  }
+  
+  .highlighted .highlighted-section:last-child {
+    margin-top: 4rem;
+  }
+}
+
+.highlighted .highlighted-section {
+  align-content: stretch;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+
+.highlighted .header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.highlighted .title-wrapper {
+  align-items: center;
+  display: flex;
+}
+
+.highlighted .icon {
+  font-size: 1.25rem;
+  margin-right: 0.5rem;
+}
+
+.highlighted .title {
+  font-weight: 600;
+  font-size: 1.125rem;
+  color: #2E3440;
+  display: inline-block;
+  margin: 0;
+}
+
+.highlighted .highlighted-projects-container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.highlighted .highlighted-project {
+  align-items: flex-start;
+  border-bottom: 1px solid #F0F0F5;
+  display: flex;
+  min-height: 6rem;
+  padding: 1.25rem 0;
+  transition: background-color 0.2s ease;
+}
+
+.highlighted .highlighted-project:hover {
+  background-color: #FAFBFC;
+  margin: 0 -1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.highlighted .highlighted-project:nth-last-child(-n+2) {
+  border-bottom: 0;
+}
+
+.highlighted .project-logo {
+  flex-basis: 3rem;
+  height: auto;
+  margin-right: 1rem;
+  width: 3rem;
+}
+
+.highlighted .project-logo img {
+  width: 100%;
+  height: auto;
+}
+
+.highlighted .project-data-container {
+  flex: 1;
+}
+
+.highlighted .project-title {
+  font-size: 1rem;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+.highlighted .project-title a {
+  color: #16171D;
+  text-decoration: none;
+}
+
+.highlighted .project-title a:hover {
+  color: #25A28C;
+}
+
+.highlighted .project-description {
+  font-size: 0.875rem;
+  color: #5A5B72;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.highlighted .project-statistics {
+  align-items: flex-start;
+  display: flex;
+  flex-basis: 140px;
+  justify-content: flex-end;
+  text-align: center;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.highlighted .statistic {
+  font-size: 0.875rem;
+  align-items: center;
+  color: #70728F;
+  display: flex;
+  margin-right: 0.5rem;
+}
+
+.highlighted .statistic span {
+  margin-left: 0.2rem;
+}
+
+.highlighted .statistic.active {
+  color: #008AA8;
+}
+
+.highlighted .view-more-projects {
+  margin-top: auto;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: #25A28C;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 3px;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.highlighted .view-more-projects:hover {
+  background: #1e8a73;
+}
+
+.highlighted .empty-highlighted-project {
+  border: 2px dashed #E2E3E9;
+  flex: 1;
+  padding: 2rem;
+  text-align: center;
+}
+
+.highlighted .empty-highlighted-project .icon {
+  font-size: 2rem;
+  display: block;
+  margin: 1rem auto;
+  color: #70728F;
+}
+
+.highlighted .empty-highlighted-project span {
+  font-weight: 400;
+  color: #5A5B72;
+  display: block;
+}
+
+.highlighted .loading-container {
+  margin-top: calc(50% - 1rem);
+  text-align: center;
+  color: #70728F;
+}
