@@ -53,9 +53,9 @@
 }
 
 .highlighted .title {
-  font-weight: 500;
-  font-size: 1.25rem;
-  color: #434456;
+  font-weight: 600;
+  font-size: 1.125rem;
+  color: #2E3440;
   display: inline-block;
   margin: 0;
 }
@@ -71,7 +71,7 @@
   align-items: flex-start;
   border-bottom: 1px solid #E2E3E9;
   display: flex;
-  min-height: 9rem;
+  min-height: 7rem;
   padding: 1.5rem 0;
 }
 
@@ -80,10 +80,10 @@
 }
 
 .highlighted .project-logo {
-  flex-basis: 3rem;
+  flex-basis: 4rem;
   height: auto;
-  margin-right: 1rem;
-  width: 3rem;
+  margin-right: 1.5rem;
+  width: 4rem;
 }
 
 .highlighted .project-logo img {
@@ -96,8 +96,8 @@
 }
 
 .highlighted .project-title {
-  font-size: 1.125rem;
-  font-weight: 400;
+  font-size: 1rem;
+  font-weight: 600;
   display: inline-block;
   margin-bottom: 0.5rem;
 }
