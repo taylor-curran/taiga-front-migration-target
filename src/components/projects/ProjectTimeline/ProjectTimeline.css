@@ -1,0 +1,79 @@
+.project-timeline {
+  background: #FFFFFF;
+  border: 1px solid #E2E3E9;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+.timeline-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2E3440;
+  margin: 0 0 1.5rem 0;
+}
+
+.timeline-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: #F9F9FB;
+  border-radius: 6px;
+  border-left: 3px solid #20a8d8;
+}
+
+.activity-icon {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.activity-content {
+  flex: 1;
+}
+
+.activity-user {
+  font-weight: 600;
+  color: #2E3440;
+  font-size: 0.875rem;
+  margin-bottom: 0.25rem;
+}
+
+.activity-description {
+  color: #5A5B72;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.activity-date {
+  color: #70728F;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.no-activity {
+  color: #70728F;
+  font-style: italic;
+  margin: 0;
+  text-align: center;
+  padding: 2rem;
+}
+
+@media (max-width: 768px) {
+  .timeline-item {
+    padding: 0.75rem;
+  }
+  
+  .activity-description {
+    font-size: 0.8rem;
+  }
+}

@@ -147,4 +147,11 @@ export const searchProjects = async (query, filters = {}) => {
   return fetchPublicProjects(params);
 };
 
+export const projectService = {
+  getProjectBySlug: (slug) => api.get(`/projects/by_slug?slug=${slug}`),
+  getProjectStats: (projectId) => api.get(`/projects/${projectId}/stats`),
+  getProjectMembers: (projectId) => api.get(`/projects/${projectId}/members`),
+  getProjectTimeline: (projectId) => api.get(`/timeline/project/${projectId}`)
+};
+
 export default api;
