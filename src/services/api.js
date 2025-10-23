@@ -147,4 +147,14 @@ export const searchProjects = async (query, filters = {}) => {
   return fetchPublicProjects(params);
 };
 
+export const fetchProjectBySlug = async (slug) => {
+  const response = await api.get(`/projects/by_slug`, { params: { slug } });
+  return response.data;
+};
+
+export const fetchProjectStats = async (projectId) => {
+  const response = await api.get(`/projects/${projectId}/stats`);
+  return response.data;
+};
+
 export default api;
