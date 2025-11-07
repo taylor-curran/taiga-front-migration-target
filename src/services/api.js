@@ -147,4 +147,37 @@ export const searchProjects = async (query, filters = {}) => {
   return fetchPublicProjects(params);
 };
 
+export const fetchProjectBySlug = async (slug) => {
+  try {
+    const response = await api.get('/projects/by_slug', {
+      params: { slug }
+    });
+    
+    const project = response.data;
+    if (project.tags && project.tags_colors) {
+      project.colorized_tags = project.tags.map(tagName => ({
+        name: tagName,
+        color: project.tags_colors[tagName] || '#999999'
+      }));
+    } else {
+      project.colorized_tags = [];
+    }
+    
+    return project;
+  } catch (error) {
+    console.error('Failed to fetch project by slug:', error);
+    throw error;
+  }
+};
+
+export const fetchProjectStats = async (projectId) => {
+  try {
+    const response = await api.get(`/projects/${projectId}/stats`);
+    return response.data;
+  } catch (error) {
+    console.error('Failed to fetch project stats:', error);
+    throw error;
+  }
+};
+
 export default api;
