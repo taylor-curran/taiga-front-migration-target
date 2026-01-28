@@ -147,4 +147,166 @@ export const searchProjects = async (query, filters = {}) => {
   return fetchPublicProjects(params);
 };
 
+// Fetch project by slug
+export const fetchProjectBySlug = async (slug) => {
+  try {
+    const response = await api.get(`/projects/by_slug`, {
+      params: { slug }
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Failed to fetch project:', error);
+    return null;
+  }
+};
+
+// Fetch project stats
+export const fetchProjectStats = async (projectId) => {
+  try {
+    const response = await api.get(`/projects/${projectId}/stats`);
+    return response.data;
+  } catch (error) {
+    console.error('Failed to fetch project stats:', error);
+    return null;
+  }
+};
+
+// Fetch sprints (milestones) for a project
+export const fetchSprints = async (projectId, params = {}) => {
+  try {
+    const response = await api.get('/milestones', {
+      params: {
+        project: projectId,
+        ...params
+      }
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Failed to fetch sprints:', error);
+    return [];
+  }
+};
+
+// Fetch user stories for backlog (unassigned to any sprint)
+export const fetchBacklogUserStories = async (projectId, params = {}) => {
+  try {
+    const response = await api.get('/userstories', {
+      params: {
+        project: projectId,
+        milestone__isnull: true,
+        ...params
+      }
+    });
+    return {
+      userStories: response.data,
+      totalCount: parseInt(response.headers['x-pagination-count'] || '0')
+    };
+  } catch (error) {
+    console.error('Failed to fetch backlog user stories:', error);
+    return { userStories: [], totalCount: 0 };
+  }
+};
+
+// Fetch user stories for a specific sprint
+export const fetchSprintUserStories = async (projectId, milestoneId) => {
+  try {
+    const response = await api.get('/userstories', {
+      params: {
+        project: projectId,
+        milestone: milestoneId
+      }
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Failed to fetch sprint user stories:', error);
+    return [];
+  }
+};
+
+// Fetch user story statuses for a project
+export const fetchUserStoryStatuses = async (projectId) => {
+  try {
+    const response = await api.get('/userstory-statuses', {
+      params: { project: projectId }
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Failed to fetch user story statuses:', error);
+    return [];
+  }
+};
+
+// Create a new sprint
+export const createSprint = async (sprintData) => {
+  try {
+    const response = await api.post('/milestones', sprintData);
+    return response.data;
+  } catch (error) {
+    console.error('Failed to create sprint:', error);
+    throw error;
+  }
+};
+
+// Update a sprint
+export const updateSprint = async (sprintId, sprintData) => {
+  try {
+    const response = await api.patch(`/milestones/${sprintId}`, sprintData);
+    return response.data;
+  } catch (error) {
+    console.error('Failed to update sprint:', error);
+    throw error;
+  }
+};
+
+// Create a new user story
+export const createUserStory = async (userStoryData) => {
+  try {
+    const response = await api.post('/userstories', userStoryData);
+    return response.data;
+  } catch (error) {
+    console.error('Failed to create user story:', error);
+    throw error;
+  }
+};
+
+// Update user story
+export const updateUserStory = async (userStoryId, data) => {
+  try {
+    const response = await api.patch(`/userstories/${userStoryId}`, data);
+    return response.data;
+  } catch (error) {
+    console.error('Failed to update user story:', error);
+    throw error;
+  }
+};
+
+// Bulk update user stories order
+export const bulkUpdateUserStoriesOrder = async (projectId, bulkData) => {
+  try {
+    const response = await api.post('/userstories/bulk_update_backlog_order', {
+      project_id: projectId,
+      bulk_userstories: bulkData
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Failed to bulk update user stories order:', error);
+    throw error;
+  }
+};
+
+// Move user stories to a sprint
+export const moveUserStoriesToSprint = async (projectId, milestoneId, userStoryIds) => {
+  try {
+    const response = await api.post('/userstories/bulk_update_milestone', {
+      project_id: projectId,
+      milestone_id: milestoneId,
+      bulk_userstories: userStoryIds.map((id, index) => ({ us_id: id, order: index }))
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Failed to move user stories to sprint:', error);
+    throw error;
+  }
+};
+
 export default api;
