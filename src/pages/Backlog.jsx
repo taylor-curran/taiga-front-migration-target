@@ -424,18 +424,18 @@ const Backlog = () => {
           <div className="backlog-table-container">
             <div className="backlog-table">
               <div className="backlog-table-header">
-                <div></div>
-                <div>
+                <div className="col-drag"></div>
+                <div className="col-checkbox">
                   <input
                     type="checkbox"
                     checked={selectedUserStories.length === userStories.length && userStories.length > 0}
                     onChange={handleSelectAll}
                   />
                 </div>
-                <div>User Story</div>
-                <div>Status</div>
-                <div>Points</div>
-                <div></div>
+                <div className="col-story">User Story</div>
+                <div className="col-status">Status</div>
+                <div className="col-points">Points</div>
+                <div className="col-options"></div>
               </div>
               
               <div 
