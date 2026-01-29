@@ -15,6 +15,9 @@ const Header = () => {
           </nav>
         </div>
         <div className="header-right">
+          <Link to="/project/new" className="create-project-btn">
+            + Create Project
+          </Link>
           <LanguageSelector />
           <span className="user-name">Demo User</span>
         </div>

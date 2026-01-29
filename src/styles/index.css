@@ -110,6 +110,21 @@ body {
   gap: 1.5rem;
 }
 
+.create-project-btn {
+  padding: 0.5rem 1rem;
+  background: #4a90d9;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+.create-project-btn:hover {
+  background: #3a7bc8;
+}
+
 .user-name {
   color: #70728F;
   font-size: 0.9rem;

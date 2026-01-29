@@ -9,11 +9,16 @@ const api = axios.create({
   },
 });
 
-// Request interceptor for language
+// Request interceptor for language and auth
 api.interceptors.request.use(
   (config) => {
     const lang = localStorage.getItem('lang') || 'en';
     config.headers['Accept-Language'] = lang;
+    
+    const token = localStorage.getItem('auth_token');
+    if (token) {
+      config.headers['Authorization'] = `Bearer ${token}`;
+    }
     return config;
   },
   (error) => {
@@ -145,6 +150,198 @@ export const searchProjects = async (query, filters = {}) => {
     page_size: 20
   };
   return fetchPublicProjects(params);
+};
+
+// Project Management API Functions
+
+export const fetchProjectBySlug = async (slug) => {
+  try {
+    const response = await api.get(`/projects/by_slug`, {
+      params: { slug }
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Failed to fetch project by slug:', error);
+    throw error;
+  }
+};
+
+export const fetchProjectById = async (projectId) => {
+  try {
+    const response = await api.get(`/projects/${projectId}`);
+    return response.data;
+  } catch (error) {
+    console.error('Failed to fetch project:', error);
+    throw error;
+  }
+};
+
+export const createProject = async (projectData) => {
+  try {
+    const response = await api.post('/projects', projectData);
+    return response.data;
+  } catch (error) {
+    console.error('Failed to create project:', error);
+    throw error;
+  }
+};
+
+export const updateProject = async (projectId, projectData) => {
+  try {
+    const response = await api.patch(`/projects/${projectId}`, projectData);
+    return response.data;
+  } catch (error) {
+    console.error('Failed to update project:', error);
+    throw error;
+  }
+};
+
+export const deleteProject = async (projectId) => {
+  try {
+    await api.delete(`/projects/${projectId}`);
+    return true;
+  } catch (error) {
+    console.error('Failed to delete project:', error);
+    throw error;
+  }
+};
+
+export const duplicateProject = async (projectId, data) => {
+  try {
+    const response = await api.post(`/projects/${projectId}/duplicate`, data);
+    return response.data;
+  } catch (error) {
+    console.error('Failed to duplicate project:', error);
+    throw error;
+  }
+};
+
+export const updateProjectLogo = async (projectId, logoFile) => {
+  try {
+    const formData = new FormData();
+    formData.append('logo', logoFile);
+    const response = await api.post(`/projects/${projectId}/change_logo`, formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Failed to update project logo:', error);
+    throw error;
+  }
+};
+
+export const removeProjectLogo = async (projectId) => {
+  try {
+    const response = await api.post(`/projects/${projectId}/remove_logo`);
+    return response.data;
+  } catch (error) {
+    console.error('Failed to remove project logo:', error);
+    throw error;
+  }
+};
+
+// Project Membership API Functions
+
+export const fetchProjectMembers = async (projectId) => {
+  try {
+    const response = await api.get('/memberships', {
+      params: { project: projectId }
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Failed to fetch project members:', error);
+    throw error;
+  }
+};
+
+export const inviteMember = async (projectId, memberData) => {
+  try {
+    const response = await api.post('/memberships', {
+      project: projectId,
+      ...memberData
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Failed to invite member:', error);
+    throw error;
+  }
+};
+
+export const updateMembership = async (membershipId, data) => {
+  try {
+    const response = await api.patch(`/memberships/${membershipId}`, data);
+    return response.data;
+  } catch (error) {
+    console.error('Failed to update membership:', error);
+    throw error;
+  }
+};
+
+export const removeMembership = async (membershipId) => {
+  try {
+    await api.delete(`/memberships/${membershipId}`);
+    return true;
+  } catch (error) {
+    console.error('Failed to remove membership:', error);
+    throw error;
+  }
+};
+
+export const resendInvitation = async (membershipId) => {
+  try {
+    const response = await api.post(`/memberships/${membershipId}/resend_invitation`);
+    return response.data;
+  } catch (error) {
+    console.error('Failed to resend invitation:', error);
+    throw error;
+  }
+};
+
+// Project Roles API Functions
+
+export const fetchProjectRoles = async (projectId) => {
+  try {
+    const response = await api.get('/roles', {
+      params: { project: projectId }
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Failed to fetch project roles:', error);
+    throw error;
+  }
+};
+
+// User API Functions
+
+export const fetchCurrentUser = async () => {
+  try {
+    const response = await api.get('/users/me');
+    return response.data;
+  } catch (error) {
+    console.error('Failed to fetch current user:', error);
+    throw error;
+  }
+};
+
+export const fetchUserProjects = async (userId) => {
+  try {
+    const response = await api.get('/projects', {
+      params: { member: userId }
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Failed to fetch user projects:', error);
+    throw error;
+  }
+};
+
+// Project Templates
+
+export const PROJECT_TEMPLATES = {
+  SCRUM: 1,
+  KANBAN: 2
 };
 
 export default api;

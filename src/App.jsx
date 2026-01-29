@@ -5,6 +5,10 @@ import Projects from './pages/Projects';
 import ProjectDetail from './pages/ProjectDetail';
 import Backlog from './pages/Backlog';
 import KanbanBoard from './pages/KanbanBoard';
+import CreateProject from './pages/CreateProject';
+import CreateProjectForm from './pages/CreateProjectForm';
+import ProjectSettings from './pages/ProjectSettings';
+import ProjectMembers from './pages/ProjectMembers';
 import './App.css';
 
 function App() {
@@ -15,9 +19,13 @@ function App() {
           <Route index element={<Home />} />
           <Route path="discover" element={<Home />} />
           <Route path="projects" element={<Projects />} />
+          <Route path="project/new" element={<CreateProject />} />
+          <Route path="project/new/:template" element={<CreateProjectForm />} />
           <Route path="project/:slug" element={<ProjectDetail />} />
           <Route path="project/:slug/backlog" element={<Backlog />} />
           <Route path="project/:slug/kanban" element={<KanbanBoard />} />
+          <Route path="project/:slug/settings" element={<ProjectSettings />} />
+          <Route path="project/:slug/settings/members" element={<ProjectMembers />} />
         </Route>
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
