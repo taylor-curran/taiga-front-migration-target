@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import ProjectCard from './common/ProjectCard';
 import '../styles/components/HighlightedProjects.css';
 
 const HighlightedProjects = ({ 
@@ -8,8 +7,7 @@ const HighlightedProjects = ({
   projects, 
   loading, 
   emptyMessage, 
-  orderBy,
-  onOrderByChange 
+  orderBy
 }) => {
   if (loading) {
     return <div className="loading-container">Loading...</div>;
