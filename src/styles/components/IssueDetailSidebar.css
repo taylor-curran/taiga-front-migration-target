@@ -1,0 +1,92 @@
+/* Issue Detail Sidebar Styles */
+.issue-detail-sidebar {
+  flex: 0 0 280px;
+  align-self: flex-start;
+  position: sticky;
+  top: 80px;
+}
+
+.sidebar-section {
+  background: #fff;
+  border: 1px solid #d8dee9;
+  border-radius: 3px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Status section */
+.sidebar-status .status-display {
+  border-left: 3px solid #999;
+  padding-left: 0.75rem;
+}
+
+.status-label {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #70728f;
+  margin-bottom: 0.25rem;
+}
+
+.status-value {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Attribute rows */
+.attribute-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.attribute-row:last-child {
+  border-bottom: none;
+}
+
+.attribute-label {
+  font-size: 0.8125rem;
+  color: #70728f;
+  font-weight: 500;
+}
+
+.attribute-value {
+  font-size: 0.8125rem;
+  color: #434456;
+  font-weight: 500;
+}
+
+.attribute-value.closed {
+  text-decoration: line-through;
+  color: #a0a0a0;
+}
+
+/* Assigned section */
+.assigned-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.assigned-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.assigned-name {
+  font-size: 0.875rem;
+  color: #434456;
+}
+
+@media (max-width: 768px) {
+  .issue-detail-sidebar {
+    flex: none;
+    width: 100%;
+    position: static;
+  }
+}

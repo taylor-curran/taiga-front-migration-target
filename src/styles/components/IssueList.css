@@ -1,0 +1,214 @@
+/* Issue List / Table Styles - Based on AngularJS issues-table */
+.issues-table {
+  margin-bottom: 2rem;
+}
+
+.issues-row {
+  display: flex;
+  align-items: center;
+  padding: 0.6rem;
+  border-radius: 3px;
+  margin-bottom: 0.75rem;
+}
+
+/* Header row */
+.issues-header {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  border-bottom: none;
+  color: #70728f;
+}
+
+.issues-header > div {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.issues-header > div:hover {
+  color: #4c566a;
+}
+
+.issues-header .subject-field {
+  justify-content: flex-start;
+}
+
+.issues-header .issue-status-field {
+  justify-content: flex-end;
+}
+
+/* Data rows */
+.issues-data-row {
+  font-size: 0.875rem;
+  background: #f4f5f8;
+  color: #70728f;
+  transition: background 0.2s ease-in;
+}
+
+.issues-data-row:hover {
+  background: #e5e9f0;
+}
+
+.issues-data-row.is-blocked {
+  background: #fce4ec;
+}
+
+/* Column sizing */
+.level-field {
+  flex: 0 0 70px;
+  margin: 0 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.subject-field {
+  flex: 1;
+  margin: 0 0.5rem;
+  min-width: 0;
+}
+
+.issue-status-field {
+  flex: 0 0 140px;
+  margin: 0 0.5rem;
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modified-field {
+  flex: 0 0 100px;
+  margin: 0 0.5rem;
+  font-size: 0.8125rem;
+  color: #70728f;
+}
+
+.assigned-field {
+  flex: 0 0 100px;
+  margin: 0 0.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* Level badges (type/severity/priority) */
+.level-badge {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  padding: 0.125rem 0.25rem;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 0.6875rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Subject link */
+.subject-field a {
+  all: unset;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 0.25rem;
+  row-gap: 0.25rem;
+}
+
+.issue-ref {
+  color: #20a8d8;
+  margin-right: 1ch;
+  white-space: nowrap;
+}
+
+.issue-subject {
+  color: #434456;
+  word-break: break-word;
+}
+
+.subject-field:hover .issue-ref {
+  color: #434456;
+}
+
+.subject-field:hover .issue-subject {
+  color: #20a8d8;
+}
+
+/* Status badge */
+.status-badge {
+  font-size: 0.8125rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+/* Assigned user */
+.assigned-user {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.unassigned {
+  color: #a0a0a0;
+  font-size: 0.8125rem;
+}
+
+/* Sort arrows */
+.sort-arrows {
+  fill: #a0a0a0;
+}
+
+.sort-asc .sort-arrows .arrow-up {
+  fill: #4c566a;
+}
+
+.sort-desc .sort-arrows .arrow-down {
+  fill: #4c566a;
+}
+
+/* Empty state */
+.issues-empty {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.issues-empty-title {
+  font-size: 1.25rem;
+  color: #434456;
+  margin-bottom: 0.5rem;
+}
+
+.issues-empty-subtitle {
+  font-size: 0.9375rem;
+  color: #70728f;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .level-field {
+    flex-basis: 1.5rem;
+  }
+
+  .issue-status-field {
+    flex-basis: 6rem;
+    max-width: 6rem;
+  }
+
+  .modified-field {
+    flex-basis: 4.5rem;
+  }
+
+  .assigned-field {
+    flex-basis: 1.5rem;
+  }
+}
