@@ -5,6 +5,8 @@ import Projects from './pages/Projects';
 import ProjectDetail from './pages/ProjectDetail';
 import Backlog from './pages/Backlog';
 import KanbanBoard from './pages/KanbanBoard';
+import Wiki from './pages/Wiki';
+import WikiList from './pages/WikiList';
 import './App.css';
 
 function App() {
@@ -18,6 +20,8 @@ function App() {
           <Route path="project/:slug" element={<ProjectDetail />} />
           <Route path="project/:slug/backlog" element={<Backlog />} />
           <Route path="project/:slug/kanban" element={<KanbanBoard />} />
+          <Route path="project/:slug/wiki" element={<WikiList />} />
+          <Route path="project/:slug/wiki/:wikiSlug" element={<Wiki />} />
         </Route>
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
