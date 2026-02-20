@@ -16,12 +16,11 @@ const Search = ({ projectId, projectSlug }) => {
 
     setLoading(true);
     try {
-      let data;
-      if (projectId) {
-        data = await searchService.search(projectId, searchText);
-      } else {
-        data = await searchService.searchAcrossProjects(searchText);
+      if (!projectId) {
+        setResults(null);
+        return;
       }
+      const data = await searchService.search(projectId, searchText);
       setResults(data);
     } catch (error) {
       console.error('Search failed:', error);

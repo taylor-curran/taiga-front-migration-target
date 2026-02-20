@@ -11,11 +11,4 @@ export const searchService = {
     const response = await api.get('/search', { params });
     return response.data;
   },
-
-  async searchAcrossProjects(text) {
-    const response = await api.get('/search', {
-      params: { text, get_all: false },
-    });
-    return response.data;
-  },
 };

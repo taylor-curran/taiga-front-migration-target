@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 import LanguageSelector from './LanguageSelector';
 import Notifications from '../Notifications';
-import Search from '../Search';
 
 const Header = () => {
   const { user, isAuthenticated, logout } = useAuth();
@@ -20,7 +19,6 @@ const Header = () => {
           </nav>
         </div>
         <div className="header-right">
-          <Search />
           <LanguageSelector />
           {isAuthenticated ? (
             <>
