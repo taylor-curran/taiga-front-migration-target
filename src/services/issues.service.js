@@ -1,9 +1,11 @@
 import api from './api';
 
 export const fetchProjectBySlug = async (slug) => {
-  const response = await api.get('/projects/by_slug', {
-    params: { slug }
+  const resolverResponse = await api.get('/resolver', {
+    params: { project: slug }
   });
+  const projectId = resolverResponse.data.project;
+  const response = await api.get(`/projects/${projectId}`);
   return response.data;
 };
 
