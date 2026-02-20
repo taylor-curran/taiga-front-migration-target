@@ -1,0 +1,162 @@
+.notifications-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.notifications-centered {
+  background: white;
+  border: 1px solid #E2E3E9;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.notifications-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid #E2E3E9;
+  background: #FAFBFC;
+}
+
+.notifications-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2E3440;
+  margin: 0;
+}
+
+.dismiss-all-btn {
+  padding: 0.5rem 1rem;
+  background: none;
+  border: 1px solid #20a8d8;
+  color: #20a8d8;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.dismiss-all-btn:hover {
+  background: #20a8d8;
+  color: white;
+}
+
+.dismiss-all-disabled {
+  font-size: 0.8rem;
+  color: #ccc;
+}
+
+.notifications-loading {
+  padding: 3rem;
+  text-align: center;
+  color: #70728F;
+}
+
+.notifications-empty {
+  padding: 4rem 2rem;
+  text-align: center;
+  color: #70728F;
+}
+
+.notifications-empty h2 {
+  color: #2E3440;
+  margin-bottom: 0.5rem;
+}
+
+.notifications-list {
+  padding: 0;
+}
+
+.notification-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #F4F4F8;
+  transition: background 0.2s;
+}
+
+.notification-item:last-child {
+  border-bottom: none;
+}
+
+.notification-item:hover {
+  background: #FAFBFC;
+}
+
+.notification-item.unread {
+  background: #F8FCFF;
+  border-left: 3px solid #20a8d8;
+}
+
+.notification-item.read {
+  opacity: 0.7;
+}
+
+.notification-content {
+  flex: 1;
+}
+
+.notification-text {
+  font-size: 0.875rem;
+  color: #2E3440;
+  line-height: 1.5;
+  margin-bottom: 0.25rem;
+}
+
+.notification-user {
+  font-weight: 600;
+  color: #20a8d8;
+}
+
+.notification-ref {
+  color: #20a8d8;
+  font-weight: 500;
+}
+
+.notification-subject {
+  font-weight: 500;
+}
+
+.notification-project {
+  font-size: 0.8rem;
+  color: #70728F;
+  margin-bottom: 0.25rem;
+}
+
+.notification-time {
+  font-size: 0.75rem;
+  color: #999;
+}
+
+.notification-dismiss {
+  padding: 0.375rem 0.75rem;
+  background: none;
+  border: 1px solid #E2E3E9;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  color: #70728F;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-left: 1rem;
+  white-space: nowrap;
+}
+
+.notification-dismiss:hover {
+  background: #F4F4F8;
+  border-color: #20a8d8;
+  color: #20a8d8;
+}
+
+.notifications-login-required {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: #70728F;
+}
+
+.notifications-login-required h2 {
+  color: #2E3440;
+  margin-bottom: 0.5rem;
+}

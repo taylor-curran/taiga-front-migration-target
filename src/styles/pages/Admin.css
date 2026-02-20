@@ -1,0 +1,293 @@
+.admin-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.admin-header {
+  margin-bottom: 1.5rem;
+}
+
+.admin-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2E3440;
+  margin: 0;
+}
+
+.admin-title .section-name {
+  font-weight: 400;
+  color: #70728F;
+}
+
+.admin-layout {
+  display: flex;
+  gap: 2rem;
+}
+
+.admin-menu {
+  width: 220px;
+  flex-shrink: 0;
+  background: white;
+  border: 1px solid #E2E3E9;
+  border-radius: 8px;
+  padding: 1rem;
+  height: fit-content;
+}
+
+.admin-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.admin-menu li {
+  margin-bottom: 2px;
+}
+
+.admin-menu li button {
+  display: block;
+  width: 100%;
+  padding: 0.625rem 0.75rem;
+  border: none;
+  background: none;
+  text-align: left;
+  font-size: 0.875rem;
+  color: #70728F;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.admin-menu li button:hover {
+  background: #F4F4F8;
+  color: #20a8d8;
+}
+
+.admin-menu li.active button {
+  background: #E8F7FC;
+  color: #20a8d8;
+  font-weight: 500;
+}
+
+.admin-content {
+  flex: 1;
+  background: white;
+  border: 1px solid #E2E3E9;
+  border-radius: 8px;
+  padding: 2rem;
+  min-width: 0;
+}
+
+.admin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.admin-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.admin-form label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #5A5B72;
+}
+
+.admin-form input[type="text"],
+.admin-form textarea {
+  padding: 0.625rem 0.75rem;
+  border: 1px solid #E2E3E9;
+  border-radius: 6px;
+  font-size: 0.875rem;
+}
+
+.admin-form input:focus,
+.admin-form textarea:focus {
+  outline: none;
+  border-color: #20a8d8;
+}
+
+.form-row {
+  display: flex;
+  gap: 2rem;
+}
+
+.form-value {
+  font-size: 0.875rem;
+  color: #2E3440;
+  margin: 0;
+}
+
+.admin-section h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2E3440;
+  margin: 0 0 1.5rem 0;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #E2E3E9;
+}
+
+.admin-project-profile h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2E3440;
+  margin: 0 0 1.5rem 0;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #E2E3E9;
+}
+
+.admin-attributes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.attribute-group {
+  flex: 1;
+  min-width: 200px;
+}
+
+.attribute-group h3 {
+  font-size: 1rem;
+  color: #5A5B72;
+  margin-bottom: 0.75rem;
+}
+
+.attribute-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.attribute-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.375rem 0;
+  font-size: 0.875rem;
+  color: #2E3440;
+}
+
+.status-color,
+.priority-color,
+.severity-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.admin-placeholder {
+  color: #70728F;
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+}
+
+.roles-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.role-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border: 1px solid #E2E3E9;
+  border-radius: 6px;
+}
+
+.role-item h3 {
+  font-size: 0.875rem;
+  color: #2E3440;
+  margin: 0;
+}
+
+.role-members {
+  font-size: 0.8rem;
+  color: #70728F;
+}
+
+.admin-members h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2E3440;
+  margin: 0 0 1.5rem 0;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #E2E3E9;
+}
+
+.members-table {
+  width: 100%;
+}
+
+.members-header {
+  display: grid;
+  grid-template-columns: 48px 1fr 120px 1fr;
+  gap: 1rem;
+  padding: 0.625rem 0;
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: #70728F;
+  text-transform: uppercase;
+  border-bottom: 2px solid #E2E3E9;
+}
+
+.member-row {
+  display: grid;
+  grid-template-columns: 48px 1fr 120px 1fr;
+  gap: 1rem;
+  padding: 0.75rem 0;
+  align-items: center;
+  border-bottom: 1px solid #F4F4F8;
+  font-size: 0.875rem;
+}
+
+.member-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.member-name {
+  color: #2E3440;
+  font-weight: 500;
+}
+
+.member-role {
+  color: #70728F;
+}
+
+.member-email {
+  color: #70728F;
+  font-size: 0.8rem;
+}
+
+.admin-empty,
+.admin-loading {
+  color: #70728F;
+  padding: 2rem;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .admin-layout {
+    flex-direction: column;
+  }
+  .admin-menu {
+    width: 100%;
+  }
+  .members-header,
+  .member-row {
+    grid-template-columns: 1fr;
+  }
+  .member-avatar-col {
+    display: none;
+  }
+}
