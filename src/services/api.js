@@ -9,11 +9,16 @@ const api = axios.create({
   },
 });
 
-// Request interceptor for language
+// Request interceptor for auth token and language
 api.interceptors.request.use(
   (config) => {
     const lang = localStorage.getItem('lang') || 'en';
     config.headers['Accept-Language'] = lang;
+
+    const token = localStorage.getItem('token');
+    if (token) {
+      config.headers['Authorization'] = `Bearer ${token}`;
+    }
     return config;
   },
   (error) => {

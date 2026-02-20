@@ -1,7 +1,16 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '../../contexts/AuthContext';
 import LanguageSelector from './LanguageSelector';
 
 const Header = () => {
+  const { user, isAuthenticated, logout } = useAuth();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate('/login');
+  };
+
   return (
     <header className="header">
       <div className="header-container">
@@ -16,7 +25,17 @@ const Header = () => {
         </div>
         <div className="header-right">
           <LanguageSelector />
-          <span className="user-name">Demo User</span>
+          {isAuthenticated ? (
+            <>
+              <span className="user-name">{user?.full_name || user?.username}</span>
+              <button className="header-btn" onClick={handleLogout}>Logout</button>
+            </>
+          ) : (
+            <>
+              <Link to="/login" className="header-btn">Login</Link>
+              <Link to="/register" className="header-btn header-btn-primary">Sign up</Link>
+            </>
+          )}
         </div>
       </div>
     </header>
