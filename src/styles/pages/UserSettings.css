@@ -1,0 +1,114 @@
+.user-settings-page {
+  padding: 20px;
+  max-width: 600px;
+}
+
+.settings-header {
+  margin-bottom: 20px;
+}
+
+.settings-title {
+  font-size: 1.8rem;
+  color: #333;
+}
+
+.settings-tabs {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 24px;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.settings-tab {
+  padding: 10px 16px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #888;
+  font-size: 0.9rem;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.settings-tab:hover {
+  color: #555;
+}
+
+.settings-tab.active {
+  color: #5e81ac;
+  border-bottom-color: #5e81ac;
+}
+
+.settings-message {
+  padding: 10px 16px;
+  margin-bottom: 16px;
+  background: #e5e9f0;
+  border-radius: 4px;
+  color: #4c566a;
+  font-size: 0.9rem;
+}
+
+.settings-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.form-label {
+  font-size: 0.85rem;
+  color: #555;
+  font-weight: 600;
+}
+
+.form-input,
+.form-select {
+  padding: 8px 12px;
+  border: 1px solid #d0d0d0;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.form-textarea {
+  padding: 8px 12px;
+  border: 1px solid #d0d0d0;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  resize: vertical;
+}
+
+.form-submit {
+  align-self: flex-start;
+  padding: 8px 24px;
+  background: #5e81ac;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+}
+
+.form-submit:hover {
+  background: #4c6e94;
+}
+
+.form-submit:disabled {
+  background: #aaa;
+  cursor: not-allowed;
+}
+
+.settings-section {
+  padding: 16px 0;
+}
+
+.settings-info {
+  color: #888;
+  font-size: 0.9rem;
+}

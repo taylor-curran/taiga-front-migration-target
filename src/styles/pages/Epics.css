@@ -1,0 +1,129 @@
+.epics-page {
+  padding: 20px;
+}
+
+.epics-header {
+  margin-bottom: 20px;
+}
+
+.epics-title {
+  font-size: 1.8rem;
+  color: #333;
+}
+
+.epics-controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.epics-sort-select,
+.epics-status-filter {
+  padding: 6px 10px;
+  border: 1px solid #d0d0d0;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  background: #fff;
+}
+
+.epic-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.epic-card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 16px;
+  transition: box-shadow 0.2s;
+}
+
+.epic-card:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.epic-card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.epic-ref {
+  color: #888;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.epic-subject {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.epic-subject:hover {
+  color: #5e81ac;
+}
+
+.epic-color-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.epic-card-meta {
+  margin-bottom: 10px;
+}
+
+.epic-status {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.epic-progress {
+  margin-bottom: 10px;
+}
+
+.epic-progress-bar {
+  height: 6px;
+  background: #e0e0e0;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 4px;
+}
+
+.epic-progress-fill {
+  height: 100%;
+  background: #a3be8c;
+  border-radius: 3px;
+  transition: width 0.3s;
+}
+
+.epic-progress-text {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.epic-card-footer {
+  display: flex;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.epic-assignee {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.epic-list-loading,
+.epic-list-empty {
+  padding: 40px;
+  text-align: center;
+  color: #888;
+}

@@ -1,0 +1,158 @@
+.issues-page {
+  padding: 20px;
+}
+
+.issues-header {
+  margin-bottom: 20px;
+}
+
+.issues-title {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.issues-subtitle {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.issue-filters {
+  margin-bottom: 20px;
+}
+
+.issue-search {
+  margin-bottom: 12px;
+}
+
+.issue-search-input {
+  width: 100%;
+  max-width: 400px;
+  padding: 8px 12px;
+  border: 1px solid #d0d0d0;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.issue-filter-controls {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.issue-sort-select,
+.issue-status-filter,
+.issue-type-filter,
+.issue-priority-filter,
+.issue-severity-filter {
+  padding: 6px 10px;
+  border: 1px solid #d0d0d0;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  background: #fff;
+}
+
+.issue-list {
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.issue-list-header {
+  display: grid;
+  grid-template-columns: 60px 1fr 120px 160px;
+  gap: 12px;
+  padding: 10px 16px;
+  background: #f5f5f5;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #666;
+  text-transform: uppercase;
+}
+
+.issue-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 12px 16px;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background-color 0.15s;
+}
+
+.issue-card:hover {
+  background-color: #fafafa;
+}
+
+.issue-card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.issue-ref {
+  color: #888;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.issue-subject {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.issue-subject:hover {
+  color: #5e81ac;
+}
+
+.issue-card-meta {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.issue-status,
+.issue-type,
+.issue-severity,
+.issue-priority {
+  font-size: 0.8rem;
+  padding: 2px 8px;
+  border-radius: 3px;
+  background: #f0f0f0;
+}
+
+.issue-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.issue-assignee {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.assignee-avatar {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.issues-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 24px;
+  padding: 16px 0;
+}
+
+.issue-list-loading,
+.issue-list-empty {
+  padding: 40px;
+  text-align: center;
+  color: #888;
+}
