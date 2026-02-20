@@ -248,3 +248,33 @@ body {
   color: red;
   font-size: 0.9rem;
 }
+
+/* Header Auth Buttons */
+.header-btn {
+  color: #70728F;
+  text-decoration: none;
+  font-size: 0.9rem;
+  background: none;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  padding: 0.4rem 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.header-btn:hover {
+  color: #20a8d8;
+  border-color: #20a8d8;
+}
+
+.header-btn-primary {
+  background: #4c566a;
+  color: #fff;
+  border-color: #4c566a;
+}
+
+.header-btn-primary:hover {
+  background: #3b4252;
+  border-color: #3b4252;
+  color: #fff;
+}
