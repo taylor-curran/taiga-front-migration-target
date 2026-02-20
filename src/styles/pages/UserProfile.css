@@ -1,0 +1,93 @@
+.user-profile-page {
+  padding: 1.5rem 2rem;
+  max-width: 800px;
+}
+
+.profile-header {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.profile-avatar {
+  flex-shrink: 0;
+}
+
+.avatar-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--color-gray300);
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.profile-name {
+  font-size: 1.4rem;
+  color: var(--color-black900);
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+.profile-username {
+  color: var(--color-link-tertiary);
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+.profile-bio {
+  color: var(--color-black600);
+  line-height: 1.5;
+  font-size: 0.9rem;
+}
+
+.profile-stats {
+  display: flex;
+  gap: 32px;
+  padding: 16px 0;
+  border-top: 1px solid var(--color-gray300);
+  border-bottom: 1px solid var(--color-gray300);
+  margin-bottom: 24px;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-value {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--color-black900);
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: var(--color-link-tertiary);
+  text-transform: uppercase;
+}
+
+.profile-roles h3 {
+  font-size: 0.9rem;
+  color: var(--color-link-tertiary);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.roles-list {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.role-tag {
+  padding: 3px 10px;
+  background: var(--color-gray200);
+  color: var(--color-black600);
+  border-radius: 16px;
+  font-size: 0.8rem;
+}

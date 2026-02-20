@@ -1,0 +1,128 @@
+.user-settings-page {
+  padding: 1.5rem 2rem;
+  max-width: 600px;
+}
+
+.settings-header {
+  margin-bottom: 1rem;
+}
+
+.settings-title {
+  font-size: 1.5rem;
+  color: var(--color-link-primary);
+  font-weight: 400;
+}
+
+.settings-tabs {
+  display: flex;
+  gap: 0;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid var(--color-gray300);
+}
+
+.settings-tab {
+  padding: 8px 16px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--color-link-tertiary);
+  font-size: 0.85rem;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  transition: color 0.15s;
+}
+
+.settings-tab:hover {
+  color: var(--color-link-primary);
+}
+
+.settings-tab.active {
+  color: var(--color-link-primary);
+  border-bottom-color: var(--color-link-primary);
+}
+
+.settings-message {
+  padding: 10px 16px;
+  margin-bottom: 16px;
+  background: var(--color-gray200);
+  border-radius: 3px;
+  color: var(--color-black600);
+  font-size: 0.85rem;
+}
+
+.settings-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.form-label {
+  font-size: 0.75rem;
+  color: var(--color-link-tertiary);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.form-input,
+.form-select {
+  padding: 7px 10px;
+  border: 1px solid var(--color-gray300);
+  border-radius: 3px;
+  font-size: 0.85rem;
+  background: var(--color-white);
+  color: var(--color-black900);
+  outline: none;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  border-color: var(--color-link-primary);
+}
+
+.form-textarea {
+  padding: 7px 10px;
+  border: 1px solid var(--color-gray300);
+  border-radius: 3px;
+  font-size: 0.85rem;
+  resize: vertical;
+  background: var(--color-white);
+  color: var(--color-black900);
+  outline: none;
+}
+
+.form-submit {
+  align-self: flex-start;
+  padding: 6px 16px;
+  background: var(--color-link-primary);
+  color: var(--color-white);
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background 0.15s;
+}
+
+.form-submit:hover {
+  background: #006d86;
+}
+
+.form-submit:disabled {
+  background: var(--color-gray400);
+  cursor: not-allowed;
+}
+
+.settings-section {
+  padding: 16px 0;
+}
+
+.settings-info {
+  color: var(--color-link-tertiary);
+  font-size: 0.85rem;
+}

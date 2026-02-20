@@ -1,101 +1,109 @@
-/* Basic Reset and Global Styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+:root {
+  --color-primary: #25A28C;
+  --color-primary-75: #5CBAA9;
+  --color-primary-50: #92D1C5;
+  --color-primary-25: #C9E8E2;
+  --color-primary-10: #E9F6F3;
+  --color-link-primary: #008AA8;
+  --color-link-tertiary: #70728F;
+  --color-link-red: #E44057;
+  --color-link-orange: #EA7B4B;
+  --color-link-yellow: #F6C95C;
+  --color-link-green: #93C45D;
+  --color-link-purple: #CA81BE;
+  --color-gray100: #F9F9FB;
+  --color-gray200: #ECEFF4;
+  --color-gray300: #E5E9F0;
+  --color-gray400: #D8DEE9;
+  --color-gray800: #505C74;
+  --color-black600: #4C566A;
+  --color-black700: #434C5E;
+  --color-black800: #3B4252;
+  --color-black900: #2E3440;
+  --color-white: #FFFFFF;
+  --color-solid-primary: #83EEDE;
+  --sidebar-width: 200px;
+  --header-height: 40px;
+}
+
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: var(--color-black900);
 }
 
 #root {
   min-height: 100vh;
 }
 
-/* Layout Styles */
 .app-layout {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-/* Header Styles - Match original Taiga */
 .header {
-  background: white;
-  border-bottom: 1px solid #e0e0e0;
-  padding: 0.75rem 1rem;
-  position: relative;
+  background: var(--color-black900);
+  padding: 0 1rem;
+  height: var(--header-height);
+  z-index: 10;
 }
 
 .header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1400px;
-  margin: 0 auto;
+  height: 100%;
 }
 
 .header-left {
   display: flex;
   align-items: center;
-  gap: 3rem;
+  gap: 2rem;
 }
 
 .logo {
   display: flex;
   align-items: center;
+  text-decoration: none;
 }
 
 .logo h1 {
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   font-weight: 300;
-  color: #20a8d8;
+  color: var(--color-solid-primary);
   margin: 0;
-  text-decoration: none;
+  letter-spacing: 0.05em;
 }
 
 .logo:hover h1 {
-  color: #1a8cba;
+  color: #fff;
 }
 
-/* Navigation Links */
 .nav-links {
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .nav-links a {
-  color: #70728F;
+  color: rgba(255,255,255,0.7);
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 0.85rem;
   font-weight: 400;
   transition: color 0.2s;
-  position: relative;
 }
 
 .nav-links a:hover {
-  color: #20a8d8;
-}
-
-.nav-links a:after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: -0.75rem;
-  left: 50%;
-  background-color: #20a8d8;
-  transition: all 0.3s ease;
-  transform: translateX(-50%);
-}
-
-.nav-links a:hover:after {
-  width: 100%;
+  color: #fff;
 }
 
 .main-container {
@@ -103,71 +111,202 @@ body {
   flex: 1;
 }
 
-/* Header Right Section */
 .header-right {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1rem;
+}
+
+.header-right a {
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: color 0.15s;
+}
+
+.header-right a:hover {
+  color: #fff;
 }
 
 .user-name {
-  color: #70728F;
-  font-size: 0.9rem;
+  color: rgba(255,255,255,0.7);
+  font-size: 0.85rem;
+  text-decoration: none;
 }
 
-/* Language Selector */
-.language-selector select {
-  padding: 0.4rem 0.8rem;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  background: white;
-  color: #70728F;
+.user-name:hover {
+  color: #fff;
+}
+
+.settings-link {
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+
+.settings-link:hover {
+  color: rgba(255,255,255,0.9);
+}
+
+.logout-button {
+  background: none;
+  border: 1px solid rgba(255,255,255,0.3);
+  color: rgba(255,255,255,0.7);
+  padding: 3px 10px;
+  border-radius: 3px;
   cursor: pointer;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
+}
+
+.logout-button:hover {
+  border-color: rgba(255,255,255,0.6);
+  color: #fff;
+}
+
+.language-selector select {
+  padding: 2px 6px;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 3px;
+  background: rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.7);
+  cursor: pointer;
+  font-size: 0.8rem;
 }
 
 .language-selector select:hover {
-  border-color: #20a8d8;
+  border-color: rgba(255,255,255,0.4);
 }
 
-/* Sidebar */
+.language-selector select option {
+  background: var(--color-black900);
+  color: #fff;
+}
+
 .app-sidebar {
-  width: 200px;
-  background: #f4f4f4;
-  padding: 1rem;
-  display: none; /* Hide sidebar for now */
+  width: var(--sidebar-width);
+  background: var(--color-black800);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  min-height: calc(100vh - var(--header-height));
 }
 
 .app-sidebar nav {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  padding: 0;
+}
+
+.sidebar-project-header {
+  padding: 16px 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.sidebar-project-header a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.sidebar-project-logo {
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  background: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.75rem;
+  flex-shrink: 0;
+}
+
+.sidebar-nav-section {
+  padding: 8px 0;
+}
+
+.sidebar-nav-section + .sidebar-nav-section {
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.sidebar-nav-label {
+  color: rgba(255,255,255,0.35);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 8px 16px 4px;
 }
 
 .app-sidebar a {
-  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255,255,255,0.65);
   text-decoration: none;
-  padding: 0.5rem;
-  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  transition: all 0.15s;
+  border-left: 3px solid transparent;
 }
 
 .app-sidebar a:hover {
-  background: #e0e0e0;
+  color: #fff;
+  background: rgba(255,255,255,0.06);
+}
+
+.app-sidebar a.active {
+  color: #fff;
+  background: rgba(255,255,255,0.1);
+  border-left-color: var(--color-solid-primary);
+}
+
+.sidebar-icon {
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 0.85rem;
+}
+
+.sidebar-collapse-btn {
+  margin-top: auto;
+  padding: 12px 16px;
+  background: none;
+  border: none;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.4);
+  cursor: pointer;
+  font-size: 0.75rem;
+  text-align: left;
+}
+
+.sidebar-collapse-btn:hover {
+  color: rgba(255,255,255,0.7);
 }
 
 .content {
   flex: 1;
-  padding: 2rem;
+  padding: 0;
+  background: var(--color-white);
+  min-height: calc(100vh - var(--header-height));
+  overflow-y: auto;
 }
 
 .app-footer {
-  background: #2c3e50;
-  color: white;
-  padding: 1rem;
+  background: var(--color-black900);
+  color: rgba(255,255,255,0.5);
+  padding: 0.75rem;
   text-align: center;
+  font-size: 0.8rem;
 }
 
-/* Home Page */
 .home-page h1 {
   margin-bottom: 1rem;
 }
@@ -175,32 +314,31 @@ body {
 .api-status {
   margin-top: 2rem;
   padding: 1rem;
-  background: #f9f9f9;
+  background: var(--color-gray100);
   border-radius: 4px;
 }
 
 .status-healthy {
-  color: green;
+  color: var(--color-link-green);
   font-weight: bold;
 }
 
 .status-unhealthy {
-  color: red;
+  color: var(--color-link-red);
   font-weight: bold;
 }
 
 .status-checking {
-  color: orange;
+  color: var(--color-link-orange);
   font-weight: bold;
 }
 
-/* Login Page */
 .login-page {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: #f4f4f4;
+  background: var(--color-gray100);
 }
 
 .login-container {
@@ -232,7 +370,7 @@ body {
 
 .login-container button {
   padding: 0.75rem;
-  background: #2c3e50;
+  background: var(--color-link-primary);
   color: white;
   border: none;
   border-radius: 4px;
@@ -241,10 +379,10 @@ body {
 }
 
 .login-container button:hover {
-  background: #34495e;
+  background: #006d86;
 }
 
 .error {
-  color: red;
+  color: var(--color-link-red);
   font-size: 0.9rem;
 }
