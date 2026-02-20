@@ -1,19 +1,23 @@
 import axios from 'axios';
-
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://api.taiga.io/api/v1';
+import { API_BASE_URL, DEFAULT_LANGUAGE, STORAGE_KEYS } from '../utils/constants';
 
 const api = axios.create({
-  baseURL: API_BASE_URL,
+  baseURL: import.meta.env.VITE_API_URL || API_BASE_URL,
   headers: {
     'Content-Type': 'application/json',
   },
 });
 
-// Request interceptor for language
 api.interceptors.request.use(
   (config) => {
-    const lang = localStorage.getItem('lang') || 'en';
+    const token = localStorage.getItem(STORAGE_KEYS.TOKEN);
+    if (token) {
+      config.headers['Authorization'] = `Bearer ${token}`;
+    }
+
+    const lang = localStorage.getItem(STORAGE_KEYS.LANG) || DEFAULT_LANGUAGE;
     config.headers['Accept-Language'] = lang;
+
     return config;
   },
   (error) => {
@@ -21,23 +25,53 @@ api.interceptors.request.use(
   }
 );
 
-// Response interceptor for error handling
 api.interceptors.response.use(
   (response) => response,
   async (error) => {
-    console.error('API Error:', error.message);
+    const originalRequest = error.config;
+
+    if (
+      error.response &&
+      error.response.status === 401 &&
+      !originalRequest._retry &&
+      !originalRequest.url.includes('/auth/refresh')
+    ) {
+      originalRequest._retry = true;
+
+      const refreshToken = localStorage.getItem(STORAGE_KEYS.REFRESH_TOKEN);
+      if (refreshToken) {
+        try {
+          const refreshResponse = await axios.post(
+            `${api.defaults.baseURL}/auth/refresh`,
+            { refresh: refreshToken }
+          );
+
+          const newToken = refreshResponse.data.auth_token;
+          const newRefresh = refreshResponse.data.refresh;
+
+          localStorage.setItem(STORAGE_KEYS.TOKEN, newToken);
+          localStorage.setItem(STORAGE_KEYS.REFRESH_TOKEN, newRefresh);
+
+          originalRequest.headers['Authorization'] = `Bearer ${newToken}`;
+          return api(originalRequest);
+        } catch (refreshError) {
+          localStorage.removeItem(STORAGE_KEYS.TOKEN);
+          localStorage.removeItem(STORAGE_KEYS.REFRESH_TOKEN);
+          localStorage.removeItem(STORAGE_KEYS.USER_INFO);
+          return Promise.reject(refreshError);
+        }
+      }
+    }
+
     return Promise.reject(error);
   }
 );
 
-// Health check function
 export const healthCheck = async () => {
   try {
     const response = await api.get('/');
-    console.log('API Health Check Success:', response.status);
     return { status: 'healthy', data: response.data };
   } catch (error) {
-    console.error('API Health Check Failed:', error.message);
     return { status: 'unhealthy', error: error.message };
   }
 };
