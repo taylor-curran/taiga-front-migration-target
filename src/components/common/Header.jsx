@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import LanguageSelector from './LanguageSelector';
+import NotificationBell from '../NotificationBell';
 
 const Header = () => {
   return (
@@ -16,6 +17,7 @@ const Header = () => {
         </div>
         <div className="header-right">
           <LanguageSelector />
+          <NotificationBell />
           <span className="user-name">Demo User</span>
         </div>
       </div>
