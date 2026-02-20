@@ -1,0 +1,158 @@
+.issue-list-item {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #F0F1F5;
+  transition: background 0.15s ease;
+}
+
+.issue-list-item:last-child {
+  border-bottom: none;
+}
+
+.issue-list-item:hover {
+  background: #F8F9FA;
+}
+
+.issue-list-item.is-closed {
+  opacity: 0.6;
+}
+
+.issue-type-indicator,
+.issue-severity-indicator,
+.issue-priority-indicator {
+  width: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.issue-type-dot,
+.issue-severity-dot,
+.issue-priority-dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.issue-subject-cell {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.issue-link {
+  text-decoration: none;
+  color: #2E3440;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+.issue-link:hover {
+  color: #008AA8;
+}
+
+.issue-ref {
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: #5A5B72;
+  flex-shrink: 0;
+}
+
+.issue-subject {
+  font-size: 0.875rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.issue-blocked-badge {
+  font-size: 0.6875rem;
+  padding: 0.125rem 0.5rem;
+  background: #CC0000;
+  color: white;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.issue-status-cell {
+  width: 120px;
+  flex-shrink: 0;
+}
+
+.issue-status-badge {
+  display: inline-block;
+  padding: 0.1875rem 0.625rem;
+  border-radius: 3px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: white;
+}
+
+.issue-modified-cell {
+  width: 110px;
+  flex-shrink: 0;
+  font-size: 0.8125rem;
+  color: #5A5B72;
+}
+
+.issue-assigned-cell {
+  width: 60px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.issue-assignee {
+  display: flex;
+  align-items: center;
+}
+
+.assignee-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.assignee-initials {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #008AA8;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.issue-unassigned {
+  color: #C0C1CC;
+  font-size: 0.8125rem;
+}
+
+@media (max-width: 768px) {
+  .issue-list-item {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .issue-type-indicator,
+  .issue-severity-indicator,
+  .issue-priority-indicator,
+  .issue-modified-cell {
+    display: none;
+  }
+
+  .issue-subject-cell {
+    flex-basis: calc(100% - 180px);
+  }
+}
