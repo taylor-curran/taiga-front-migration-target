@@ -2,6 +2,14 @@ import moment from 'moment';
 import WikiContent from './WikiContent';
 
 const WikiPageViewer = ({ wiki, loading }) => {
+  const lastModifier = wiki?.last_modifier_extra_info || wiki?.owner_extra_info;
+  const lastModifierName = lastModifier?.full_name_display || lastModifier?.username;
+  const lastModifierPhoto = lastModifier?.photo;
+
+  const modifiedLabel = wiki?.modified_date
+    ? `Last modified${lastModifierName ? ` by ${lastModifierName}` : ''}: ${moment(wiki.modified_date).format('MMM D, YYYY HH:mm')}`
+    : null;
+
   if (loading) {
     return (
       <div className="wiki-page-viewer loading">
@@ -22,21 +30,33 @@ const WikiPageViewer = ({ wiki, loading }) => {
   return (
     <div className="wiki-page-viewer">
       <div className="wiki-page-header">
-        <h2 className="wiki-page-title">{wiki.slug}</h2>
+        <h2 className="wiki-page-title">{wiki.subject || wiki.slug}</h2>
         <div className="wiki-page-meta">
+          {lastModifierPhoto && (
+            <img
+              className="meta-avatar"
+              src={lastModifierPhoto}
+              alt={lastModifierName || 'User'}
+            />
+          )}
+          {wiki.modified_date && (
+            <span className="wiki-modified">
+              Last modified{lastModifierName ? ` by ${lastModifierName}` : ''}:{' '}
+              {moment(wiki.modified_date).format('MMM D, YYYY HH:mm')}
+            </span>
+          )}
           {wiki.editions !== undefined && (
             <span className="wiki-editions">
               {wiki.editions} {wiki.editions === 1 ? 'edition' : 'editions'}
             </span>
           )}
-          {wiki.modified_date && (
-            <span className="wiki-modified">
-              Last modified: {moment(wiki.modified_date).format('MMM D, YYYY')}
-            </span>
-          )}
         </div>
       </div>
       <WikiContent content={wiki.html || wiki.content} loading={false} />
+      <div className="wiki-activity">
+        <div className="wiki-activity-title">Activity</div>
+        <div className="wiki-content-empty">Activity feed not yet implemented.</div>
+      </div>
     </div>
   );
 };

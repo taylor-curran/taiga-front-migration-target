@@ -1,5 +1,5 @@
 .user-profile-page {
-  padding: 20px;
+  padding: 1.5rem 2rem;
   max-width: 800px;
 }
 
@@ -19,7 +19,7 @@
   height: 100px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid #e0e0e0;
+  border: 3px solid var(--color-gray300);
 }
 
 .profile-info {
@@ -27,28 +27,30 @@
 }
 
 .profile-name {
-  font-size: 1.6rem;
-  color: #333;
+  font-size: 1.4rem;
+  color: var(--color-black900);
   margin-bottom: 4px;
+  font-weight: 600;
 }
 
 .profile-username {
-  color: #888;
-  font-size: 0.95rem;
+  color: var(--color-link-tertiary);
+  font-size: 0.9rem;
   margin-bottom: 8px;
 }
 
 .profile-bio {
-  color: #555;
+  color: var(--color-black600);
   line-height: 1.5;
+  font-size: 0.9rem;
 }
 
 .profile-stats {
   display: flex;
   gap: 32px;
   padding: 16px 0;
-  border-top: 1px solid #e0e0e0;
-  border-bottom: 1px solid #e0e0e0;
+  border-top: 1px solid var(--color-gray300);
+  border-bottom: 1px solid var(--color-gray300);
   margin-bottom: 24px;
 }
 
@@ -60,19 +62,20 @@
   display: block;
   font-size: 1.4rem;
   font-weight: 600;
-  color: #333;
+  color: var(--color-black900);
 }
 
 .stat-label {
-  font-size: 0.8rem;
-  color: #888;
+  font-size: 0.75rem;
+  color: var(--color-link-tertiary);
   text-transform: uppercase;
 }
 
 .profile-roles h3 {
-  font-size: 1rem;
-  color: #555;
+  font-size: 0.9rem;
+  color: var(--color-link-tertiary);
   margin-bottom: 8px;
+  text-transform: uppercase;
 }
 
 .roles-list {
@@ -82,9 +85,9 @@
 }
 
 .role-tag {
-  padding: 4px 12px;
-  background: #e5e9f0;
-  color: #4c566a;
+  padding: 3px 10px;
+  background: var(--color-gray200);
+  color: var(--color-black600);
   border-radius: 16px;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
 }

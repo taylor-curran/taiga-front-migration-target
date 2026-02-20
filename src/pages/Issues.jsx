@@ -145,23 +145,32 @@ const Issues = () => {
 
       {totalPages > 1 && (
         <div className="issues-pagination">
-          <button
-            className="pagination-button"
-            onClick={() => handlePageChange(currentPage - 1)}
-            disabled={currentPage === 1}
-          >
-            Previous
-          </button>
-          <span className="pagination-info">
-            Page {currentPage} of {totalPages}
-          </span>
-          <button
-            className="pagination-button"
-            onClick={() => handlePageChange(currentPage + 1)}
-            disabled={currentPage === totalPages}
-          >
-            Next
-          </button>
+          {currentPage > 1 && (
+            <button className="pagination-page" onClick={() => handlePageChange(1)}>1</button>
+          )}
+          {currentPage > 3 && <span className="pagination-ellipsis">...</span>}
+          {currentPage > 2 && (
+            <button className="pagination-page" onClick={() => handlePageChange(currentPage - 1)}>
+              {currentPage - 1}
+            </button>
+          )}
+          <span className="pagination-page active">{currentPage}</span>
+          {currentPage < totalPages - 1 && (
+            <button className="pagination-page" onClick={() => handlePageChange(currentPage + 1)}>
+              {currentPage + 1}
+            </button>
+          )}
+          {currentPage < totalPages - 2 && <span className="pagination-ellipsis">...</span>}
+          {currentPage < totalPages && (
+            <>
+              <button className="pagination-page" onClick={() => handlePageChange(totalPages)}>
+                {totalPages}
+              </button>
+              <button className="pagination-page" onClick={() => handlePageChange(currentPage + 1)}>
+                Next ›
+              </button>
+            </>
+          )}
         </div>
       )}
     </div>

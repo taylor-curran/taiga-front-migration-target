@@ -137,7 +137,7 @@ const Search = ({ projectId, projectSlug }) => {
           {renderResultSection('Wiki Pages', results.wikipages, 'wikipages')}
           {totalResults === 0 && (
             <div className="search-no-results">
-              <p>No results found for &quot;{query}&quot;</p>
+              <p>No results found for "{query}"</p>
             </div>
           )}
         </div>
