@@ -1,0 +1,206 @@
+.epics-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.epics-header {
+  margin-bottom: 1.5rem;
+}
+
+.epics-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2E3440;
+  margin: 0;
+}
+
+.epics-title .section-name {
+  font-weight: 400;
+  color: #70728F;
+}
+
+.epics-table {
+  background: white;
+  border: 1px solid #E2E3E9;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.epics-table-header {
+  display: grid;
+  grid-template-columns: 40px 12px 60px 1fr 150px 120px 150px;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: #F8F9FA;
+  font-weight: 600;
+  color: #70728F;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.epics-table-loading {
+  padding: 3rem;
+  text-align: center;
+  color: #70728F;
+}
+
+.epic-row {
+  border-bottom: 1px solid #F4F4F8;
+}
+
+.epic-row-main {
+  display: grid;
+  grid-template-columns: 40px 12px 60px 1fr 150px 120px 150px;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  align-items: center;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.epic-row-main:hover {
+  background: #FAFBFC;
+}
+
+.epic-expand-toggle {
+  text-align: center;
+}
+
+.expand-arrow {
+  display: inline-block;
+  font-size: 0.7rem;
+  color: #70728F;
+  transition: transform 0.2s;
+}
+
+.expand-arrow.open {
+  transform: rotate(90deg);
+}
+
+.epic-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.epic-ref {
+  color: #20a8d8;
+  font-weight: 500;
+}
+
+.epic-subject {
+  color: #2E3440;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.epic-progress {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.progress-bar {
+  flex: 1;
+  height: 6px;
+  background: #E2E3E9;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #93C45D;
+  border-radius: 3px;
+  transition: width 0.3s;
+}
+
+.progress-text {
+  font-size: 0.75rem;
+  color: #70728F;
+  white-space: nowrap;
+}
+
+.epic-user-stories {
+  padding: 0.5rem 1rem 1rem 5rem;
+  background: #FAFBFC;
+}
+
+.no-stories {
+  color: #999;
+  font-style: italic;
+  font-size: 0.875rem;
+}
+
+.story-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.story-row {
+  display: flex;
+  gap: 1rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #F4F4F8;
+  font-size: 0.8rem;
+  align-items: center;
+}
+
+.story-ref {
+  color: #20a8d8;
+  font-weight: 500;
+  min-width: 50px;
+}
+
+.story-subject {
+  flex: 1;
+  color: #2E3440;
+}
+
+.story-status {
+  font-weight: 500;
+}
+
+.empty-epics {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: #70728F;
+}
+
+.empty-epics h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #2E3440;
+}
+
+.empty-epics p {
+  max-width: 500px;
+  margin: 0 auto 1.5rem;
+  line-height: 1.6;
+}
+
+.help-link {
+  color: #20a8d8;
+  text-decoration: none;
+}
+
+.help-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .epics-table-header,
+  .epic-row-main {
+    grid-template-columns: 30px 12px 1fr;
+  }
+  .epic-progress,
+  .epic-status,
+  .epic-assignee,
+  .epic-ref {
+    display: none;
+  }
+}

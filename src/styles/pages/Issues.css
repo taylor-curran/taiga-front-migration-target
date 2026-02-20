@@ -1,0 +1,273 @@
+.issues-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.issue-top {
+  margin-bottom: 1.5rem;
+}
+
+.issue-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.issues-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2E3440;
+  margin: 0;
+}
+
+.issues-title .section-name {
+  font-weight: 400;
+  color: #70728F;
+}
+
+.issue-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+.btn-filter {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid #E2E3E9;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: all 0.2s;
+}
+
+.btn-filter:hover,
+.btn-filter.active {
+  background: #20a8d8;
+  color: white;
+  border-color: #20a8d8;
+}
+
+.issue-search {
+  flex: 1;
+  min-width: 200px;
+}
+
+.issue-search .search-input {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: 1px solid #E2E3E9;
+  border-radius: 6px;
+  font-size: 0.875rem;
+}
+
+.issue-search .search-input:focus {
+  outline: none;
+  border-color: #20a8d8;
+}
+
+.display-tags-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #70728F;
+  cursor: pointer;
+}
+
+.issue-container {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.filters-bar {
+  width: 240px;
+  flex-shrink: 0;
+}
+
+.issues-section {
+  flex: 1;
+  min-width: 0;
+}
+
+.issues-section.with-filter {
+  flex: 1;
+}
+
+.issues-info {
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+  color: #70728F;
+}
+
+.issue-filters {
+  background: white;
+  border: 1px solid #E2E3E9;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.filters-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2E3440;
+  margin-bottom: 1.5rem;
+}
+
+.filter-group {
+  margin-bottom: 1.25rem;
+}
+
+.filter-label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #70728F;
+  margin-bottom: 0.5rem;
+}
+
+.filter-select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #E2E3E9;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  background: white;
+}
+
+.issue-list {
+  background: white;
+  border: 1px solid #E2E3E9;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.issue-table {
+  width: 100%;
+}
+
+.issue-row {
+  display: grid;
+  grid-template-columns: 60px 1fr 100px 100px 120px 150px;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #F4F4F8;
+  align-items: center;
+  font-size: 0.875rem;
+}
+
+.issue-row:hover {
+  background: #FAFBFC;
+}
+
+.issue-header-row {
+  background: #F8F9FA;
+  font-weight: 600;
+  color: #70728F;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.issue-header-row:hover {
+  background: #F8F9FA;
+}
+
+.issue-ref a {
+  color: #20a8d8;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.issue-subject a {
+  color: #2E3440;
+  text-decoration: none;
+}
+
+.issue-subject a:hover {
+  color: #20a8d8;
+}
+
+.issue-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin-top: 0.25rem;
+}
+
+.issue-tag {
+  font-size: 0.7rem;
+  padding: 0.1rem 0.4rem;
+  border-radius: 3px;
+  color: white;
+}
+
+.priority-high {
+  color: #E44057;
+  font-weight: 500;
+}
+
+.priority-normal {
+  color: #70728F;
+}
+
+.priority-low {
+  color: #93C45D;
+}
+
+.severity-critical {
+  color: #E44057;
+  font-weight: 600;
+}
+
+.severity-major {
+  color: #F0A848;
+}
+
+.severity-normal {
+  color: #70728F;
+}
+
+.status-badge {
+  font-weight: 500;
+}
+
+.unassigned {
+  color: #999;
+  font-style: italic;
+}
+
+.issue-list-loading,
+.issue-list-empty {
+  padding: 3rem;
+  text-align: center;
+  color: #70728F;
+}
+
+.empty-large h2 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: #2E3440;
+}
+
+@media (max-width: 768px) {
+  .issue-container {
+    flex-direction: column;
+  }
+  .filters-bar {
+    width: 100%;
+  }
+  .issue-row {
+    grid-template-columns: 50px 1fr;
+    gap: 0.25rem;
+  }
+  .issue-priority,
+  .issue-severity,
+  .issue-assignee {
+    display: none;
+  }
+}
