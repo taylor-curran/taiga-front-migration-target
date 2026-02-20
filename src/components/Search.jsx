@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
-import { useSearchParams, Link, useParams } from 'react-router-dom';
+import { useSearchParams, Link } from 'react-router-dom';
 import { searchInProject } from '../services/search.service';
 
 const TABS = [
