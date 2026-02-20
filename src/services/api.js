@@ -32,6 +32,7 @@ api.interceptors.response.use(
     if (error.response && error.response.status === 401) {
       localStorage.removeItem('auth-token');
       localStorage.removeItem('auth-user');
+      window.dispatchEvent(new Event('auth-logout'));
     }
     console.error('API Error:', error.message);
     return Promise.reject(error);

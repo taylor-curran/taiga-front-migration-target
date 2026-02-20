@@ -88,6 +88,11 @@ const Issues = () => {
   useEffect(() => {
     if (projectId) {
       loadFiltersData(projectId);
+    }
+  }, [projectId, loadFiltersData]);
+
+  useEffect(() => {
+    if (projectId) {
       const filterParams = {};
       if (filters.selectedStatus) filterParams.status = filters.selectedStatus;
       if (filters.selectedType) filterParams.type = filters.selectedType;
@@ -95,7 +100,7 @@ const Issues = () => {
       if (filters.selectedSeverity) filterParams.severity = filters.selectedSeverity;
       loadIssues(projectId, currentPage, searchQuery, sortBy, filterParams);
     }
-  }, [projectId, currentPage, searchQuery, sortBy, filters.selectedStatus, filters.selectedType, filters.selectedPriority, filters.selectedSeverity, loadIssues, loadFiltersData]);
+  }, [projectId, currentPage, searchQuery, sortBy, filters.selectedStatus, filters.selectedType, filters.selectedPriority, filters.selectedSeverity, loadIssues]);
 
   const handleFilterChange = (filterType, value) => {
     setCurrentPage(1);
@@ -162,14 +167,14 @@ const Issues = () => {
           )}
           {currentPage < totalPages - 2 && <span className="pagination-ellipsis">...</span>}
           {currentPage < totalPages && (
-            <>
-              <button className="pagination-page" onClick={() => handlePageChange(totalPages)}>
-                {totalPages}
-              </button>
-              <button className="pagination-page" onClick={() => handlePageChange(currentPage + 1)}>
-                Next ›
-              </button>
-            </>
+            <button className="pagination-page" onClick={() => handlePageChange(totalPages)}>
+              {totalPages}
+            </button>
+          )}
+          {currentPage < totalPages && (
+            <button className="pagination-page" onClick={() => handlePageChange(currentPage + 1)}>
+              Next ›
+            </button>
           )}
         </div>
       )}

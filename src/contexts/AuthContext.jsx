@@ -8,11 +8,19 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const user = authService.getCurrentUser();
-    if (user) {
-      setUser(user);
+    const storedUser = authService.getCurrentUser();
+    if (storedUser) {
+      setUser(storedUser);
     }
     setLoading(false);
+  }, []);
+
+  useEffect(() => {
+    const handleLogout = () => {
+      setUser(null);
+    };
+    window.addEventListener('auth-logout', handleLogout);
+    return () => window.removeEventListener('auth-logout', handleLogout);
   }, []);
 
   const login = async (username, password) => {

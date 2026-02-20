@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import { authService } from '../services/auth.service';
 import '../styles/pages/UserSettings.css';
@@ -14,6 +14,16 @@ const UserSettings = () => {
     bio: user?.bio || '',
     lang: user?.lang || 'en',
   });
+
+  useEffect(() => {
+    if (user) {
+      setProfileForm({
+        full_name: user.full_name || '',
+        bio: user.bio || '',
+        lang: user.lang || 'en',
+      });
+    }
+  }, [user]);
 
   const [passwordForm, setPasswordForm] = useState({
     current_password: '',
