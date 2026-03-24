@@ -147,4 +147,36 @@ export const searchProjects = async (query, filters = {}) => {
   return fetchPublicProjects(params);
 };
 
+export const fetchProjectBySlug = async (slug) => {
+  try {
+    const response = await api.get('/projects/by_slug', {
+      params: { slug }
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Failed to fetch project by slug:', error);
+    throw error;
+  }
+};
+
+export const fetchProjectStats = async (projectId) => {
+  try {
+    const response = await api.get(`/projects/${projectId}/stats`);
+    return response.data;
+  } catch (error) {
+    console.error('Failed to fetch project stats:', error);
+    throw error;
+  }
+};
+
+export const fetchProjectMemberStats = async (projectId) => {
+  try {
+    const response = await api.get(`/projects/${projectId}/member_stats`);
+    return response.data;
+  } catch (error) {
+    console.error('Failed to fetch project member stats:', error);
+    throw error;
+  }
+};
+
 export default api;
