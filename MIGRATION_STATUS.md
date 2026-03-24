@@ -34,7 +34,8 @@
 - **Pages**: 
   - `Home` (fully implemented)
   - `Projects` (fully implemented with search/filter/sort)
-  - `ProjectDetail`, `Backlog`, `KanbanBoard` (scaffolded only - empty stubs)
+  - `ProjectDetail` (fully implemented with project info, stats, member list, tags, and navigation to sub-pages)
+  - `Backlog`, `KanbanBoard` (scaffolded only - empty stubs)
 
 ### **API Service Layer**
 - Public endpoints integrated:
@@ -44,6 +45,9 @@
   - Locales/languages
   - Discover statistics
   - Public projects with pagination
+  - Project detail by slug
+  - Project stats
+  - Project member stats
 
 ## ❌ Still Needs Migration
 
@@ -98,12 +102,12 @@ The original AngularJS app has extensive functionality that hasn't been migrated
 
 ## 📊 Migration Progress Summary
 
-**Overall Completion: ~15-20%**
+**Overall Completion: ~20-25%**
 
 | Category | Status | Details |
 |----------|--------|---------|
 | **Foundation** | ✅ 100% | React setup, routing, API connectivity |
-| **Public Pages** | 🔶 40% | Home and Projects complete, detail pages are stubs |
+| **Public Pages** | 🔶 60% | Home, Projects, and ProjectDetail complete; Backlog/Kanban are stubs |
 | **Authentication** | ❌ 0% | Not started |
 | **Project Features** | ❌ 0% | Read-only stubs only |
 | **Agile Tools** | ❌ 0% | Basic page shells only |
@@ -114,7 +118,7 @@ The original AngularJS app has extensive functionality that hasn't been migrated
 
 Based on the migration plan, the immediate next steps should be:
 
-1. **Phase 3**: Implement public Project Detail page with stats
+1. ~~**Phase 3**: Implement public Project Detail page with stats~~ ✅ **COMPLETED**
 2. **Phase 4**: Build read-only Backlog view  
 3. **Phase 4**: Build read-only Kanban Board view
 4. **Phase 5**: Add public Wiki viewer
@@ -130,4 +134,4 @@ The scaffold provides a solid foundation, but the vast majority of Taiga's funct
 
 ---
 
-*Last Updated: 2025-09-02*
+*Last Updated: 2026-03-24*
